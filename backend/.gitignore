@@ -8,6 +8,7 @@ public/core/*
 !public/core/elements
 public/setup
 public/ht.access
+public/entrypoints.json
 
 # Logs
 logs
