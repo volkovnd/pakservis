@@ -1,12 +1,15 @@
 {
   "folders": [
     {
-      "path": "frontend"
+      "path": "frontend",
+      "name": "frontend"
     },
     {
-      "path": "backend"
+      "path": "backend",
+      "name": "backend"
     }
   ],
+
   "remoteAuthority": "wsl+Ubuntu",
   "settings": {
     "files.exclude": {
@@ -69,6 +72,7 @@
     "vetur.validation.style": false,
     "vetur.validation.template": false,
     "vetur.validation.templateProps": false,
+
     "emmet.includeLanguages": {
       "smarty": "html"
     }
