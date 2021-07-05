@@ -1,7 +1,5 @@
-<section>
-  <div class="container">
-    <h1>{$_modx->resource.pagetitle}</h1>
+<v-section>
+  <h1 slot="title">{$_modx->resource.pagetitle}</h1>
 
-    {$_modx->resource.content}
-  </div>
-</section>
+  {$_modx->resource.content}
+</v-section>

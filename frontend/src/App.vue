@@ -1,12 +1,6 @@
 <script>
-import VContainer from "@/components/VContainer.vue";
-
 export default {
   name: "App",
-
-  components: {
-    VContainer,
-  },
 };
 </script>
 
@@ -22,8 +16,8 @@ export default {
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
 // @import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
 // @import "~bootstrap/scss/accordion";
 @import "~bootstrap/scss/breadcrumb";
@@ -42,4 +36,10 @@ export default {
 // @import "~bootstrap/scss/offcanvas";
 @import "~bootstrap/scss/helpers";
 @import "~bootstrap/scss/utilities/api";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 </style>

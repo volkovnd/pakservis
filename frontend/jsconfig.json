@@ -4,10 +4,11 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@theme": ["src/theme/index.scss"]
+      "@theme": ["src/theme/index.scss"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "typeAcquisition": {
-    "exclude": ["source-map"]
+    "exclude": ["source-map", "mdast-util-from-markdown", "mdast-util-to-markdown"]
   }
 }
