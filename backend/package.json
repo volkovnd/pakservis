@@ -1,0 +1,17 @@
+{
+  "name": "@volkovnd/backend",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "clean:cache": "node ./scripts/clean-cache.js",
+    "start": "nodemon --watch public/core/elements --ext \"tpl,php,html,json\" --exec \"npm run clean:cache\""
+  },
+  "keywords": [],
+  "author": "Volkov Nikolay <volkovnd@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.9",
+    "prettier": "^2.3.2"
+  }
+}
