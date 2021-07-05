@@ -61,4 +61,6 @@ module.exports.devServer = {
       autoRewrite: true,
     },
   },
+
+  writeToDisk: true,
 };
