@@ -1,0 +1,5 @@
+{
+  "app": {
+    "js": ["/assets/js/chunk-vendors.js", "/assets/js/app.js"]
+  }
+}

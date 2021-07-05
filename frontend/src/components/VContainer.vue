@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/container";
+@import "~bootstrap/scss/containers";
 </style>

@@ -2,7 +2,7 @@
 <html lang="{$_modx->config.cultureKey}">
   <head>
   {block 'head'}
-    <base href="{$_modx->config.site_url}" />
+    <base href="/" />
     <meta charset="{$_modx->config.modx_charset}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

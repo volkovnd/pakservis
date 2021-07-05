@@ -47,8 +47,9 @@
     "prettier.useTabs": false,
     "prettier.vueIndentScriptAndStyle": false,
 
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": false
     },
@@ -75,6 +76,7 @@
 
     "emmet.includeLanguages": {
       "smarty": "html"
-    }
+    },
+    "editor.formatOnSave": true
   }
 }

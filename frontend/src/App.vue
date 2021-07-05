@@ -1,6 +1,12 @@
 <script>
+import VContainer from "@/components/VContainer.vue";
+
 export default {
   name: "App",
+
+  components: {
+    VContainer,
+  },
 };
 </script>
 
