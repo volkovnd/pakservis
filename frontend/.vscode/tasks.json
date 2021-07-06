@@ -12,17 +12,20 @@
     {
       "label": "Build frontend",
       "type": "npm",
-      "script": "build"
+      "script": "build",
+      "problemMatcher": []
     },
     {
       "label": "Start frontend",
       "type": "npm",
-      "script": "serve"
+      "script": "serve",
+      "problemMatcher": []
     },
     {
       "label": "Watch frontend",
       "type": "npm",
-      "script": "watch"
+      "script": "watch",
+      "problemMatcher": []
     }
   ]
 }
