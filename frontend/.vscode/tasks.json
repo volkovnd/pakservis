@@ -18,7 +18,7 @@
     {
       "label": "Start frontend",
       "type": "npm",
-      "script": "serve",
+      "script": "start",
       "problemMatcher": [],
       "isBackground": true,
       "runOptions": {
