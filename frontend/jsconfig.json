@@ -5,7 +5,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@theme": ["src/theme/index.scss"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@constants": ["src/constants.js"]
     }
   },
   "typeAcquisition": {
