@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Install backend dependencies",
+      "label": "Install backend",
       "type": "npm",
       "script": "install",
       "problemMatcher": []
@@ -13,13 +13,23 @@
       "label": "Clean MODX cache",
       "type": "npm",
       "script": "clean:cache",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": "build"
     },
     {
       "label": "Start clean MODX cache",
       "type": "npm",
       "script": "start",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": "build",
+      "isBackground": true,
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "Start backend",
+      "dependsOn": ["Start clean MODX cache"]
     }
   ]
 }
