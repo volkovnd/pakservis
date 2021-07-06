@@ -27,6 +27,10 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-md">
         <div class="col col-md-8 col-lg-9">
+          {block 'breadcrumb'}
+            {include 'breadcrumb'}
+          {/block}
+
           {block 'main'}
             <v-main>
               {include 'section'}

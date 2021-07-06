@@ -19,7 +19,6 @@ export default {
 // @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
 // @import "~bootstrap/scss/accordion";
-@import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 // @import "~bootstrap/scss/badge";
 // @import "~bootstrap/scss/alert";
