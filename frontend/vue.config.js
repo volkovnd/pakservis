@@ -42,11 +42,7 @@ module.exports = {
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
 
-    config.plugins
-      .delete("prefetch")
-      .delete("preload")
-      .delete("html")
-      .delete("copy");
+    config.plugins.delete("prefetch").delete("preload").delete("html");
 
     config.plugin("assets").use(AssetsWebpackPlugin, [
       {
