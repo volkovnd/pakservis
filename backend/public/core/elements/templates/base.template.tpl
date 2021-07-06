@@ -24,7 +24,7 @@
       {include 'menu'}
     {/block}
 
-    <div class="container">
+    <v-container>
       <div class="row row-cols-1 row-cols-md">
         <div class="col col-md-8 col-lg-9">
           {block 'breadcrumb'}
@@ -53,7 +53,7 @@
           {/block}
         </div>
       </div>
-    </div>
+    </v-container>
 
     {block 'footer'}
       <v-footer>
