@@ -32,10 +32,21 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias.merge(aliases);
 
-    config.plugins.delete("prefetch");
-    config.plugins.delete("preload");
-    config.plugins.delete("html");
-    config.plugins.delete("copy");
+    config.module
+      .rule("svg")
+      .uses.clear()
+      .end()
+      .use("babel-loader")
+      .loader("babel-loader")
+      .end()
+      .use("vue-svg-loader")
+      .loader("vue-svg-loader");
+
+    config.plugins
+      .delete("prefetch")
+      .delete("preload")
+      .delete("html")
+      .delete("copy");
 
     config.plugin("assets").use(AssetsWebpackPlugin, [
       {
