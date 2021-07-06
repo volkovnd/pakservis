@@ -24,7 +24,6 @@ export default {
 // @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
 // @import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
 // @import "~bootstrap/scss/toasts";
 @import "~bootstrap/scss/modal";
 // @import "~bootstrap/scss/tooltip";
