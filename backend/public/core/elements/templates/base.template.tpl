@@ -31,11 +31,21 @@
             {include 'breadcrumb'}
           {/block}
 
+          <v-main>
           {block 'main'}
-            <v-main>
-              {include 'section'}
-            </v-main>
+            <v-section>
+              {block 'title'}
+                <h1 slot="title">{$_modx->resource.pagetitle}</h1>
+              {/block}
+
+              {block 'content'}
+                <v-content>
+                  {$_modx->resource.content}
+                </v-content>
+              {/block}
+            </v-section>
           {/block}
+          </v-main>
         </div>
         <div class="col col-md-4 col-lg-3">
           {block 'aside'}
