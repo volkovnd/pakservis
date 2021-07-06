@@ -1,20 +1,10 @@
-<template functional>
-  <LogoComponent
-    class="logo"
-    :width="props.width"
-    :height="props.height"
-    :alt="alt"
-  />
-</template>
-
 <script>
+import { mergeData } from "vue-functional-data-merge";
 import { SITE_NAME } from "@constants";
 import LogoComponent from "@assets/logo.svg";
 
 export default {
-  components: {
-    LogoComponent,
-  },
+  functional: true,
   props: {
     alt: {
       type: String,
@@ -28,6 +18,19 @@ export default {
       type: Number,
       default: null,
     },
+  },
+  render: (h, { data, props }) => {
+    return h(
+      LogoComponent,
+      mergeData(data, {
+        staticClass: "logo",
+        attrs: {
+          width: props.width,
+          height: props.height,
+          alt: props.alt,
+        },
+      })
+    );
   },
 };
 </script>
