@@ -18,7 +18,7 @@
     {
       "label": "Start frontend",
       "type": "npm",
-      "script": "serve",
+      "script": "start",
       "problemMatcher": [],
       "isBackground": true,
       "runOptions": {
@@ -28,6 +28,18 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "Clean frontend hot updates files in dist",
+      "type": "npm",
+      "script": "clean:hot-updates",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean frontend dist",
+      "type": "npm",
+      "script": "clean:dist",
+      "problemMatcher": []
     },
     {
       "label": "Watch frontend",

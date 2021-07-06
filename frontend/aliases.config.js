@@ -7,4 +7,5 @@ module.exports = {
   "@theme": resolve("src/theme/index.scss"),
   "@assets": resolve("src/assets"),
   "@constants": resolve("src/constants.js"),
+  "@directives": resolve("src/directives"),
 };

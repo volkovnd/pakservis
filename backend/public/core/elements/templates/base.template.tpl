@@ -24,14 +24,28 @@
       {include 'menu'}
     {/block}
 
-    <div class="container">
+    <v-container>
       <div class="row row-cols-1 row-cols-md">
         <div class="col col-md-8 col-lg-9">
-          {block 'main'}
-            <v-main>
-              {include 'section'}
-            </v-main>
+          {block 'breadcrumb'}
+            {include 'breadcrumb'}
           {/block}
+
+          <v-main>
+          {block 'main'}
+            <v-section>
+              {block 'title'}
+                <h1 slot="title">{$_modx->resource.pagetitle}</h1>
+              {/block}
+
+              {block 'content'}
+                <v-content>
+                  {$_modx->resource.content}
+                </v-content>
+              {/block}
+            </v-section>
+          {/block}
+          </v-main>
         </div>
         <div class="col col-md-4 col-lg-3">
           {block 'aside'}
@@ -39,7 +53,7 @@
           {/block}
         </div>
       </div>
-    </div>
+    </v-container>
 
     {block 'footer'}
       <v-footer>

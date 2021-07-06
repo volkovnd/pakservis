@@ -6,10 +6,11 @@
       "@/*": ["src/*"],
       "@theme": ["src/theme/index.scss"],
       "@assets/*": ["src/assets/*"],
-      "@constants": ["src/constants.js"]
+      "@constants": ["src/constants.js"],
+      "@directives/*": ["src/directives/*"]
     }
   },
   "typeAcquisition": {
-    "exclude": ["source-map", "mdast-util-from-markdown", "mdast-util-to-markdown"]
+    "exclude": ["source-map", "mdast-util-from-markdown", "mdast-util-to-markdown", "defer-to-connect"]
   }
 }

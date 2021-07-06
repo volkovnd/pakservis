@@ -19,13 +19,11 @@ export default {
 // @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
 // @import "~bootstrap/scss/accordion";
-@import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 // @import "~bootstrap/scss/badge";
 // @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
 // @import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
 // @import "~bootstrap/scss/toasts";
 @import "~bootstrap/scss/modal";
 // @import "~bootstrap/scss/tooltip";
