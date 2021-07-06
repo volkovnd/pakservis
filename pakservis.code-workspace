@@ -7,9 +7,12 @@
     {
       "path": "backend",
       "name": "backend"
+    },
+    {
+      "path": "docs",
+      "name": "docs"
     }
   ],
-
   "remoteAuthority": "wsl+Ubuntu",
   "settings": {
     "files.exclude": {
