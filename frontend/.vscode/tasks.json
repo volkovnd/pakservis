@@ -30,6 +30,18 @@
       }
     },
     {
+      "label": "Clean frontend hot updates files in dist",
+      "type": "npm",
+      "script": "clean:hot-updates",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean frontend dist",
+      "type": "npm",
+      "script": "clean:dist",
+      "problemMatcher": []
+    },
+    {
       "label": "Watch frontend",
       "type": "npm",
       "script": "watch",
