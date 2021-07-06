@@ -8,7 +8,6 @@ export default {
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
 @import "~bootstrap/scss/grid";
 // @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
