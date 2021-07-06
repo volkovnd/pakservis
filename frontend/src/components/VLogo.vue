@@ -1,20 +1,34 @@
+<template functional>
+  <LogoComponent
+    class="logo"
+    :width="props.width"
+    :height="props.height"
+    :alt="alt"
+  />
+</template>
+
 <script>
-import { mergeData } from "vue-functional-data-merge";
-import LogoSrc from "@assets/logo.svg";
+import { SITE_NAME } from "@constants";
+import LogoComponent from "@assets/logo.svg";
 
 export default {
-  functional: true,
-  render: (h, { data }) =>
-    h(
-      "img",
-      mergeData(data, {
-        attrs: {
-          src: LogoSrc,
-          alt: "",
-        },
-        staticClass: "logo",
-      })
-    ),
+  components: {
+    LogoComponent,
+  },
+  props: {
+    alt: {
+      type: String,
+      default: SITE_NAME,
+    },
+    width: {
+      type: Number,
+      default: null,
+    },
+    height: {
+      type: Number,
+      default: null,
+    },
+  },
 };
 </script>
 
