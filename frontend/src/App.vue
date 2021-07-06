@@ -11,7 +11,6 @@ export default {
 @import "~bootstrap/scss/grid";
 // @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
 // @import "~bootstrap/scss/button-group";
