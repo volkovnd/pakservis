@@ -22,12 +22,13 @@
 
 <script>
 import { Modal } from "bootstrap";
+import uniqueId from "@/utils/uniqueId";
 
 export default {
   data() {
     return {
       modal: null,
-      id: this.$attrs.id || `modal-${this._uid}`,
+      id: this.$attrs.id || uniqueId("modal-"),
     };
   },
   mounted() {
