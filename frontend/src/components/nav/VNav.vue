@@ -4,6 +4,10 @@
       nav: !navbar,
       'navbar-nav': !!navbar,
       'flex-column': column,
+      'nav-tabs': tabs,
+      'nav-pills': pills,
+      'nav-fill': fill,
+      'nav-justified': justified,
     }"
   >
     <slot />
@@ -20,6 +24,22 @@ export default {
   },
   props: {
     column: {
+      type: Boolean,
+      default: false,
+    },
+    tabs: {
+      type: Boolean,
+      default: false,
+    },
+    pills: {
+      type: Boolean,
+      default: false,
+    },
+    fill: {
+      type: Boolean,
+      default: false,
+    },
+    justified: {
       type: Boolean,
       default: false,
     },

@@ -1,24 +1,14 @@
 <template>
-  <div
-    class="navbar"
-    :class="{
-      'navbar-expand': !expand,
-      [`navbar-expand-${expand}`]: !!expand,
-      [`navbar-${theme}`]: !!theme,
-    }"
-  >
-    <v-container :fluid="fluid" class="g-0">
-      <button
-        ref="toggler"
-        type="button"
-        class="navbar-toggler"
-        @click="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div :id="id" class="navbar" :class="[expandClassName, themeClassName]">
+    <v-container :fluid="fluid">
+      <slot name="toggler" v-bind="{ id, toggle, show, hide, isShown }">
+        <button type="button" class="navbar-toggler" @click="toggle">
+          <span class="navbar-toggler-icon" />
+        </button>
+      </slot>
 
-      <div :id="id" ref="collapse" class="navbar-collapse collapse">
-        <slot />
+      <div ref="collapse" class="navbar-collapse collapse">
+        <slot v-bind="{ toggle, show, hide, isShown, id }"></slot>
       </div>
     </v-container>
   </div>
@@ -26,14 +16,20 @@
 
 <script>
 import { Collapse } from "bootstrap";
+import uniqueId from "@/utils/uniqueId";
 
 export default {
+  inheritAttrs: false,
   provide() {
     return {
       navbar: true,
     };
   },
   props: {
+    id: {
+      type: String,
+      default: uniqueId("navbar-"),
+    },
     expand: {
       type: String,
       default: "md",
@@ -46,21 +42,43 @@ export default {
       type: Boolean,
       default: false,
     },
+    shown: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       collapse: null,
 
-      id: this.$attrs.id || `navbar-${this._uid}`,
+      isShown: this.shown,
     };
+  },
+  computed: {
+    expandClassName() {
+      if (!this.expand) return "navbar-expand";
+
+      return `navbar-expand-${this.expand}`;
+    },
+    themeClassName() {
+      return `navbar-${this.theme}`;
+    },
   },
   mounted() {
     this.collapse = new Collapse(this.$refs.collapse, {
       toggle: false,
     });
+
+    this.$el.addEventListener(`hide${Collapse.EVENT_KEY}`, () => {
+      this.isShown = false;
+    });
+
+    this.$el.addEventListener(`show${Collapse.EVENT_KEY}`, () => {
+      this.isShown = true;
+    });
   },
   beforeDestroy() {
-    // this.collapse;
+    if (this.collapse) this.collapse.dispose();
   },
   methods: {
     toggle() {
