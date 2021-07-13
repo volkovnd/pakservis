@@ -1,9 +1,9 @@
 import Vue from "vue";
 
-function loadComponents() {
-  const context = require.context("@/components", true, /V.*\.vue$/);
+const components = {};
 
-  const components = context
+function importComponents(context) {
+  context
     .keys()
     .map((key) => ({
       key,
@@ -13,19 +13,12 @@ function loadComponents() {
         .split(/\//)
         .pop(),
     }))
-    .reduce(
-      (components, { key, component }) => ({
-        [component]: context(key).default,
-
-        ...components,
-      }),
-      {}
-    );
-
-  return { context, components };
+    .forEach(({ key, component }) => {
+      components[component] = context(key).default;
+    });
 }
 
-const { components } = loadComponents();
+importComponents(require.context("@/components", true, /V[\w]+\.vue$/i));
 
 for (const component in components) {
   Vue.component(component, components[component]);
