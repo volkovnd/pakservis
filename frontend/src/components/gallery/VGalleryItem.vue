@@ -1,12 +1,8 @@
 <template>
   <div class="col">
-    <img
-      :src="src"
-      :original="originalSrc"
-      :alt="title"
-      :class="$style.image"
-      v-bind="$attrs"
-    />
+    <div class="gallery-item">
+      <img :src="src" :original="originalSrc" :alt="title" v-bind="$attrs" />
+    </div>
   </div>
 </template>
 
@@ -42,10 +38,19 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
-.image {
-  display: block;
-  max-width: 100%;
-  max-height: 150px;
+<style lang="scss">
+.gallery-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+
+  & > img {
+    display: block;
+    max-width: 100%;
+    max-height: 150px;
+  }
 }
 </style>

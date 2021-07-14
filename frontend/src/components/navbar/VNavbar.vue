@@ -26,10 +26,6 @@ export default {
     };
   },
   props: {
-    id: {
-      type: String,
-      default: uniqueId("navbar-"),
-    },
     expand: {
       type: String,
       default: "md",
@@ -49,6 +45,8 @@ export default {
   },
   data() {
     return {
+      id: this.$attrs.id || uniqueId("navbar-"),
+
       collapse: null,
 
       isShown: this.shown,

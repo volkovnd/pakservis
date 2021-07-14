@@ -1,8 +1,8 @@
 {
   "files.exclude": {
-    "public/{manager,connectors,setup,index.php,config.core.php,ht.access}": true,
+    "public/{manager,connectors,setup,index.php,config.core.php,ht.access,entrypoints.json}": true,
     "public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo,ht.access}": true,
-    "public/assets/components": true
+    "public/assets": true
   },
 
   "files.watcherExclude": {

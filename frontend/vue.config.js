@@ -67,6 +67,7 @@ module.exports = {
 
 /** @type {import("webpack-dev-server").Configuration} */
 module.exports.devServer = {
+  index: "",
   port: 3000,
 
   proxy: {
@@ -76,9 +77,9 @@ module.exports.devServer = {
       changeOrigin: true,
       context: () => true,
 
-      autoRewrite: true,
-      followRedirects: true,
-      prependPath: true,
+      // autoRewrite: true,
+      // followRedirects: true,
+      // prependPath: true,
     },
   },
 

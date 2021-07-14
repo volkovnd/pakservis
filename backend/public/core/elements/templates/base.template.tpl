@@ -2,7 +2,7 @@
 <html lang="{$_modx->config.cultureKey}">
   <head>
   {block 'head'}
-    <base href="/" />
+    <base href="{$_modx->makeUrl($_modx->config.site_start)}" />
     <meta charset="{$_modx->config.modx_charset}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,24 +25,25 @@
     {/block}
 
     <v-container>
-      <div class="row row-cols-1 row-cols-md">
+      <div class="row">
         <div class="col col-md-8 col-lg-9">
-          {block 'breadcrumb'}
-            {include 'breadcrumb'}
-          {/block}
-
           <v-main>
           {block 'main'}
             <v-section>
-              {block 'title'}
-                <h1 slot="title">{$_modx->resource.pagetitle}</h1>
+              {block 'heading'}
+                {block 'title'}
+                  <h1>{$_modx->resource.pagetitle}</h1>
+                {/block}
+                {block 'breadcrumb'}
+                  {include 'breadcrumb'}
+                {/block}
               {/block}
 
+              <v-content>
               {block 'content'}
-                <v-content>
-                  {$_modx->resource.content}
-                </v-content>
+                {$_modx->resource.content}
               {/block}
+              </v-content>
             </v-section>
           {/block}
           </v-main>

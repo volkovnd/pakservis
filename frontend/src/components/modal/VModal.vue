@@ -3,7 +3,6 @@
     :id="id"
     class="modal fade"
     tabindex="-1"
-    :aria-labelledby="title ? id + '-label' : false"
     :aria-hidden="isShown ? 'false' : 'true'"
   >
     <div class="modal-dialog">
@@ -13,7 +12,7 @@
             name="title"
             v-bind="{ show, hide, toggle, id, isShown, title }"
           >
-            <h5 v-if="title" :id="id + '-label'" class="modal-title">
+            <h5 v-if="title" class="modal-title">
               {{ title }}
             </h5>
           </slot>
@@ -37,10 +36,6 @@ import uniqueId from "@/utils/uniqueId";
 export default {
   inheritAttrs: false,
   props: {
-    id: {
-      type: String,
-      default: uniqueId("modal-"),
-    },
     shown: {
       type: Boolean,
       default: false,
@@ -52,6 +47,8 @@ export default {
   },
   data() {
     return {
+      id: this.$attrs.id || uniqueId("modal-"),
+
       modal: null,
 
       isShown: this.shown,

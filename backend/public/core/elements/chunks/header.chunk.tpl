@@ -3,7 +3,7 @@
     <div class="row row-cols-auto justify-content-between align-items-center">
       <div class="col">
         <a href="/">
-          <v-logo />
+          <v-logo></v-logo>
         </a>
       </div>
       <div class="col">

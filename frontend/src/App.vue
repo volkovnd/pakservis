@@ -5,6 +5,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bootstrap/scss/utilities";
+
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
