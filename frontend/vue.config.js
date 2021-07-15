@@ -18,6 +18,7 @@ module.exports = {
           if (!/\/design\//.test(relativePath)) {
             return '@import "@design";';
           }
+
           return "";
         },
       },
@@ -40,7 +41,8 @@ module.exports = {
       .loader("babel-loader")
       .end()
       .use("vue-svg-loader")
-      .loader("vue-svg-loader");
+      .loader("vue-svg-loader")
+      .end();
 
     config.plugin("assets").use(require.resolve("assets-webpack-plugin"), [
       {
@@ -61,6 +63,7 @@ module.exports = {
 
 /** @type {import("webpack-dev-server").Configuration} */
 module.exports.devServer = {
+  index: "",
   port: 3000,
   proxy: {
     "/*": {
