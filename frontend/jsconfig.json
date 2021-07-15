@@ -4,10 +4,9 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@theme": ["src/theme/index.scss"],
+      "@design": ["src/design/index.scss"],
       "@assets/*": ["src/assets/*"],
-      "@constants": ["src/constants.js"],
-      "@directives/*": ["src/directives/*"]
+      "@constants": ["src/constants.js"]
     }
   },
   "typeAcquisition": {

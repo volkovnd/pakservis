@@ -1,28 +1,23 @@
 const path = require("path");
-const AssetsWebpackPlugin = require("assets-webpack-plugin");
-
-const aliases = require("./aliases.config");
 
 /** @type {import("@vue/cli-service").ProjectOptions} */
 module.exports = {
   assetsDir: "assets",
+  lintOnSave: false,
   runtimeCompiler: true,
   productionSourceMap: false,
-  lintOnSave: false,
 
   css: {
     sourceMap: process.env.NODE_ENV !== "production",
-
     loaderOptions: {
       scss: {
         prependData: (loaderContext) => {
           const { resourcePath, rootContext } = loaderContext;
           const relativePath = path.relative(rootContext, resourcePath);
 
-          if (!/\/theme\//.test(relativePath)) {
-            return '@import "@theme";';
+          if (!/\/design\//.test(relativePath)) {
+            return '@import "@design";';
           }
-
           return "";
         },
       },
@@ -30,7 +25,12 @@ module.exports = {
   },
 
   chainWebpack: (config) => {
-    config.resolve.alias.merge(aliases);
+    config.plugins.delete("html");
+    config.plugins.delete("prefetch");
+    config.plugins.delete("preload");
+    config.plugins.delete("copy");
+
+    config.resolve.alias.merge(require("./aliases.config"));
 
     config.module
       .rule("svg")
@@ -42,13 +42,7 @@ module.exports = {
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
 
-    config.plugins
-      .delete("prefetch")
-      .delete("preload")
-      .delete("html")
-      .delete("copy");
-
-    config.plugin("assets").use(AssetsWebpackPlugin, [
+    config.plugin("assets").use(require.resolve("assets-webpack-plugin"), [
       {
         entrypoints: true,
         useCompilerPath: true,
@@ -68,19 +62,16 @@ module.exports = {
 /** @type {import("webpack-dev-server").Configuration} */
 module.exports.devServer = {
   port: 3000,
-
   proxy: {
     "/*": {
       target: "https://pakservis.loc",
+      context: () => true,
       secure: false,
       changeOrigin: true,
-      context: () => true,
-
       autoRewrite: true,
       followRedirects: true,
       prependPath: true,
     },
   },
-
   writeToDisk: true,
 };

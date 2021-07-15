@@ -4,10 +4,10 @@
   "arrowParens": "always",
   "bracketSpacing": true,
   "endOfLine": "lf",
-  "htmlWhitespaceSensitivity": "ignore",
-  "quoteProps": "as-needed",
+  "quoteProps": "preserve",
   "semi": true,
-  "trailingComma": "es5",
+  "singleQuote": false,
+  "trailingComma": "all",
   "vueIndentScriptAndStyle": false,
-  "singleQuote": false
+  "htmlWhitespaceSensitivity": "ignore"
 }

@@ -1,9 +1,10 @@
 {
+
   "files.exclude": {
     "**/dist": true
   },
-  "editor.formatOnSave": false,
 
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -13,7 +14,15 @@
     "javascript",
     "javascriptreact",
     "vue",
-    "vue-html",
-    "html"
+    "html",
+    "vue-html"
+  ],
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "sass",
+    "scss",
+    "vue",
+    "vue-postcss"
   ]
 }

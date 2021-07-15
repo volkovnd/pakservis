@@ -1,19 +1,19 @@
 <template>
-  <div :id="id" ref="modal" class="modal fade" tabindex="-1">
+  <div class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <div v-if="!!$scopedSlots.title" class="modal-title">
+          <h5 v-if="!!$scopedSlots.title" class="modal-title">
             <slot name="title"></slot>
-          </div>
+          </h5>
 
-          <VClose @click="hide()" />
+          <VClose @click="hide" />
         </div>
         <div class="modal-body">
-          <slot></slot>
+          <slot />
         </div>
         <div v-if="!!$scopedSlots.footer" class="modal-footer">
-          <slot name="footer"></slot>
+          <slot name="footer" />
         </div>
       </div>
     </div>
@@ -27,11 +27,13 @@ export default {
   data() {
     return {
       modal: null,
-      id: this.$attrs.id || `modal-${this._uid}`,
     };
   },
   mounted() {
-    this.modal = new Modal(this.$refs.modal);
+    this.modal = new Modal(this.$el);
+  },
+  beforeDestroy() {
+    if (this.modal) this.modal.dispose();
   },
   methods: {
     toggle() {

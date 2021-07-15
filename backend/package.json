@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "clean:cache": "node ./scripts/clean-cache.js",
-    "start": "nodemon --watch public/core/elements --ext \"tpl,php,html,json\" --exec \"npm run clean:cache\"",
-    "copy:frontend": "node ./scripts/copy-frontend.js",
-    "start:copy": "nodemon --watch ../frontend/dist --ext \"js,json,css,jpeg,jpg,png,svg,webp,woff,ttf,eot,woff2\" ./scripts/copy-frontend.js"
+    "start:clean": "nodemon --ext \"php,tpl,json\" --watch public/core/elements ./scripts/clean-cache.js",
+    "copy:frontend": "node ./scripts/copy-from-frontend.js",
+    "start:copy": "nodemon --watch ../frontend/dist --ext \"js,json,css,jpeg,jpg,png,svg,webp,woff,ttf,eot,woff2\" ./scripts/copy-from-frontend.js"
   },
   "keywords": [],
   "author": "Volkov Nikolay <volkovnd@yandex.ru>",

@@ -1,10 +1,8 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Install backend",
+      "label": "Install backend dependencies",
       "type": "npm",
       "script": "install",
       "problemMatcher": []
@@ -13,23 +11,35 @@
       "label": "Clean MODX cache",
       "type": "npm",
       "script": "clean:cache",
-      "problemMatcher": [],
-      "group": "build"
+      "problemMatcher": []
+    },
+    {
+      "label": "Copy frontend",
+      "type": "npm",
+      "script": "copy:frontend",
+      "problemMatcher": []
     },
     {
       "label": "Start clean MODX cache",
       "type": "npm",
-      "script": "start",
-      "problemMatcher": [],
-      "group": "build",
+      "script": "start:clean",
       "isBackground": true,
-      "runOptions": {
-        "instanceLimit": 1
-      }
+      "runOptions": { "instanceLimit": 1 },
+      "problemMatcher": []
     },
     {
-      "label": "Start backend",
-      "dependsOn": ["Start clean MODX cache"]
+      "label": "Start copy frontend",
+      "type": "npm",
+      "script": "start:copy",
+      "isBackground": true,
+      "runOptions": { "instanceLimit": 1 },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start",
+      "dependsOn": ["Start clean MODX cache", "Start copy frontend"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
     }
   ]
 }

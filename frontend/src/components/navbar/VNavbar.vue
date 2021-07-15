@@ -2,23 +2,19 @@
   <div
     class="navbar"
     :class="{
-      'navbar-expand': !expand,
-      [`navbar-expand-${expand}`]: !!expand,
-      [`navbar-${theme}`]: !!theme,
+      [`navbar-${theme}`]: true,
+      [`navbar-expand${expand ? '-' + expand : ''}`]: true,
     }"
   >
-    <v-container :fluid="fluid" class="g-0">
-      <button
-        ref="toggler"
-        type="button"
-        class="navbar-toggler"
-        @click="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <v-container :fluid="fluid">
+      <slot name="toggler" v-bind="{ toggle, show, hide }">
+        <button type="button" class="navbar-toggler" @click="toggle()">
+          <span class="navbar-toggler-icon" />
+        </button>
+      </slot>
 
-      <div :id="id" ref="collapse" class="navbar-collapse collapse">
-        <slot />
+      <div ref="collapse" class="navbar-collapse collapse">
+        <slot v-bind="{ toggle, show, hide }" />
       </div>
     </v-container>
   </div>
@@ -28,6 +24,7 @@
 import { Collapse } from "bootstrap";
 
 export default {
+  inheritAttrs: false,
   provide() {
     return {
       navbar: true,
@@ -38,20 +35,18 @@ export default {
       type: String,
       default: "md",
     },
-    theme: {
-      type: String,
-      default: "dark",
-    },
     fluid: {
       type: Boolean,
       default: false,
+    },
+    theme: {
+      type: String,
+      default: "light",
     },
   },
   data() {
     return {
       collapse: null,
-
-      id: this.$attrs.id || `navbar-${this._uid}`,
     };
   },
   mounted() {
@@ -60,7 +55,7 @@ export default {
     });
   },
   beforeDestroy() {
-    // this.collapse;
+    if (this.collapse) this.collapse.dispose();
   },
   methods: {
     toggle() {

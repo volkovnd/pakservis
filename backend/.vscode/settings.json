@@ -1,21 +1,7 @@
 {
   "files.exclude": {
-    "public/{manager,connectors,setup,index.php,config.core.php,ht.access}": true,
-    "public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo,ht.access}": true,
-    "public/assets/components": true
-  },
-
-  "files.watcherExclude": {
-    "**/public/setup/**": true,
-    "**/public/manager/**": true,
-    "**/public/connectors/**": true,
-    "**/public/assets/components/**": true,
-    "**/public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo}/**": true
-  },
-
-  "search.exclude": {
-    "**/public/{manager,connectors,setup,index.php,ht.access}": true,
-    "**/public/assets/components": true,
-    "**/public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo}": true
+    "public/{manager,connectors,assets}": true,
+    "public/{index.php,config.core.php,ht.access,entrypoints.json,vapor}": true,
+    "public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo,ht.access}": true
   }
 }

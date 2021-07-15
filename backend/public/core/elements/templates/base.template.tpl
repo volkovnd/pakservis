@@ -2,67 +2,66 @@
 <html lang="{$_modx->config.cultureKey}">
   <head>
   {block 'head'}
-    <base href="/" />
+    <base href="{$_modx->makeUrl($_modx->config.site_start)}" />
     <meta charset="{$_modx->config.modx_charset}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{$_modx->resource.pagetitle} - {$_modx->config.site_name}</title>
 
     {block 'styles'}
-      <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700:cyrillic,latin" rel="stylesheet"  />
+      <link href="//fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic:cyrillic,latin" rel="stylesheet" />
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic:cyrillic,latin" rel="stylesheet" />
     {/block}
   {/block}
   </head>
   <body>
-  {block 'body'}
     <div id="app">
-    {block 'header'}
-      {include 'header'}
-    {/block}
+      {block 'header'}
+        {include 'header'}
+      {/block}
 
-    {block 'menu'}
-      {include 'menu'}
-    {/block}
+      {block 'menu'}
+        {include 'menu'}
+      {/block}
 
-    <v-container>
-      <div class="row row-cols-1 row-cols-md">
-        <div class="col col-md-8 col-lg-9">
-          {block 'breadcrumb'}
-            {include 'breadcrumb'}
-          {/block}
-
-          <v-main>
-          {block 'main'}
-            <v-section>
-              {block 'title'}
-                <h1 slot="title">{$_modx->resource.pagetitle}</h1>
-              {/block}
-
-              {block 'content'}
-                <v-content>
-                  {$_modx->resource.content}
-                </v-content>
-              {/block}
-            </v-section>
-          {/block}
-          </v-main>
-        </div>
-        <div class="col col-md-4 col-lg-3">
-          {block 'aside'}
-            {include 'aside'}
-          {/block}
-        </div>
+      <div>
+        <v-container>
+          <div class="row">
+            <div class="col-12 col-md-8 col-lg-9">
+              <div id="main">
+                {block 'main'}
+                <section>
+                  {block 'heading'}
+                    {block 'title'}
+                      <h1>{$_modx->resource.pagetitle}</h1>
+                    {/block}
+                    {block 'breadcrumb'}
+                      {include 'breadcrumb'}
+                    {/block}
+                  {/block}
+                  {block 'content'}
+                    {$_modx->resource.content}
+                  {/block}
+                </section>
+                {/block}
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <aside>
+                {block 'aside'}
+                  {include 'aside'}
+                {/block}
+              </aside>
+            </div>
+          </div>
+        </v-container>
       </div>
-    </v-container>
 
-    {block 'footer'}
-      <v-footer>
+      {block 'footer'}
         {include 'footer'}
-      </v-footer>
-    {/block}
+      {/block}
     </div>
 
     {block 'scripts'}{/block}
-  {/block}
   </body>
 </html>

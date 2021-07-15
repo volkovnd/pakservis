@@ -1,54 +1,37 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Install frontend",
+      "label": "Install frontend dependencies",
       "type": "npm",
       "script": "install",
       "problemMatcher": []
     },
     {
-      "label": "Build frontend",
+      "label": "Build",
       "type": "npm",
       "script": "build",
       "problemMatcher": []
     },
     {
-      "label": "Start frontend",
+      "label": "Watch",
+      "type": "npm",
+      "script": "watch",
+      "isBackground": true,
+      "runOptions": {"instanceLimit": 1},
+      "problemMatcher":{"base": "$tsc-watch"}
+
+    },
+    {
+      "label": "Start",
       "type": "npm",
       "script": "start",
-      "problemMatcher": [],
       "isBackground": true,
-      "runOptions": {
-        "instanceLimit": 1
-      },
+      "runOptions": {"instanceLimit": 1},
+      "problemMatcher":{"base": "$tsc-watch"},
       "group": {
         "kind": "build",
         "isDefault": true
-      }
-    },
-    {
-      "label": "Clean frontend hot updates files in dist",
-      "type": "npm",
-      "script": "clean:hot-updates",
-      "problemMatcher": []
-    },
-    {
-      "label": "Clean frontend dist",
-      "type": "npm",
-      "script": "clean:dist",
-      "problemMatcher": []
-    },
-    {
-      "label": "Watch frontend",
-      "type": "npm",
-      "script": "watch",
-      "problemMatcher": [],
-      "isBackground": true,
-      "runOptions": {
-        "instanceLimit": 1
       }
     }
   ]

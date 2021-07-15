@@ -7,5 +7,7 @@ import "@/bindGlobals";
 Vue.config.productionTip = false;
 
 new Vue({
+  el: "#app",
+
   ...App,
-}).$mount("#app");
+});

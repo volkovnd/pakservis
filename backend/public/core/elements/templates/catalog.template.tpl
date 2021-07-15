@@ -1,15 +1,13 @@
 {extends "template:base"}
 
-{block "main"}
+{block "content"}
 {parent}
 
 {var $gallery = $_modx->resource.gallery|fromJSON}
 
 {if $gallery|iterable}
-<v-section>
-  <v-container>
-    {include 'gallery' items=$gallery}
-  </v-container>
-</v-section>
+<section>
+  {include 'gallery' items=$gallery}
+</section>
 {/if}
 {/block}
