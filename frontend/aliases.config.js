@@ -1,10 +1,8 @@
 const path = require("path");
 
-const resolve = (p) => path.resolve(__dirname, p);
-
 const aliases = {
   "@": "src",
-  "@theme": "src/theme/index.scss",
+  "@design": "src/design/index.scss",
   "@assets": "src/assets",
   "@constants": "src/constants.js",
 };
@@ -12,7 +10,7 @@ const aliases = {
 for (const alias in aliases) {
   const aliasPath = aliases[alias];
 
-  aliases[alias] = resolve(aliasPath);
+  aliases[alias] = path.resolve(__dirname, aliasPath);
 }
 
 module.exports = aliases;

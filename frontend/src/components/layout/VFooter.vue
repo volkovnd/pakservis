@@ -6,9 +6,8 @@
 
 <style lang="scss">
 #footer {
-  padding-top: map-get($spacers, 4);
-  padding-bottom: map-get($spacers, 4);
-  margin-top: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: $white;
   background-color: $primary;
 }

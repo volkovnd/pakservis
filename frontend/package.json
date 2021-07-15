@@ -1,25 +1,21 @@
 {
-  "name": "@volkovnd/frontend",
+  "name": "@volkovnd/pakservis",
   "version": "0.1.0",
   "private": true,
   "description": "",
   "author": "Volkov Nikolay <volkovnd@yandex.ru>",
   "scripts": {
-    "start": "nodemon --watch vue.config.js --watch aliases.config.js --exec \"npm run serve\"",
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "watch": "vue-cli-service build --mode development --watch",
-    "clean:dist": "node ./scripts/clean-dist.js",
-    "clean:hot-updates": "node ./scripts/clean-hot-updates.js"
+    "watch": "vue-cli-service build --mode development --watch"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
-    "lodash-es": "^4.17.21",
     "viewerjs": "^1.10.0",
-    "vue": "^2.6.14",
+    "vue": "^2.6.11",
     "vue-functional-data-merge": "^3.1.0",
     "vue-yandex-maps": "^0.10.11",
     "webfontloader": "^1.6.28"
@@ -31,7 +27,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "assets-webpack-plugin": "^6.1.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "nodemon": "^2.0.9",
@@ -48,7 +44,7 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
     "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.11"
   },
   "keywords": [],
   "license": "MIT",

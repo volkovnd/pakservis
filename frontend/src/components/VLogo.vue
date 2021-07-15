@@ -1,13 +1,11 @@
-<template>
-  <LogoComponent class="logo" v-bind="$attrs" />
-</template>
-
 <script>
+import { mergeData } from "vue-functional-data-merge";
+import LogoComponent from "@assets/logo.svg";
+
 export default {
-  components: {
-    LogoComponent: () => import("@assets/logo.svg"),
-  },
-  inheritAttrs: false,
+  functional: true,
+  render: (h, { data }) =>
+    h(LogoComponent, mergeData(data, { staticClass: "logo" })),
 };
 </script>
 

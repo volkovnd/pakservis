@@ -1,25 +1,20 @@
-<script>
-import { mergeData } from "vue-functional-data-merge";
+<template>
+  <div
+    :class="{
+      [`container${fluid ? '-fluid' : ''}`]: true,
+    }"
+  >
+    <slot />
+  </div>
+</template>
 
+<script>
 export default {
-  functional: true,
   props: {
     fluid: {
       type: Boolean,
       default: false,
     },
-  },
-  render: (h, { data, props, children }) => {
-    return h(
-      "div",
-      mergeData(data, {
-        class: {
-          "container-fluid": props.fluid,
-          container: !props.fluid,
-        },
-      }),
-      children
-    );
   },
 };
 </script>

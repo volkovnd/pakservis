@@ -1,7 +1,7 @@
 <template>
-  <div id="menu" class="sticky-top">
+  <nav id="menu">
     <slot />
-  </div>
+  </nav>
 </template>
 
 <style lang="scss">

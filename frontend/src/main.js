@@ -2,11 +2,12 @@ import Vue from "vue";
 
 import App from "@/App.vue";
 
-import "@/bindPlugins";
 import "@/bindGlobals";
 
 Vue.config.productionTip = false;
 
 new Vue({
+  el: "#app",
+
   ...App,
-}).$mount("#app");
+});
