@@ -68,20 +68,13 @@ module.exports = {
 /** @type {import("webpack-dev-server").Configuration} */
 module.exports.devServer = {
   index: "",
-  port: 3000,
-
   proxy: {
     "/*": {
       target: "https://pakservis.loc",
       secure: false,
       changeOrigin: true,
       context: () => true,
-
-      // autoRewrite: true,
-      // followRedirects: true,
-      // prependPath: true,
     },
   },
-
   writeToDisk: true,
 };

@@ -17,5 +17,11 @@
     "**/public/{manager,connectors,setup,index.php,ht.access}": true,
     "**/public/assets/components": true,
     "**/public/core/{cache,components,config,docs,error,export,import,lexicon,model,packages,xpdo}": true
+  },
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false
   }
 }
