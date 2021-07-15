@@ -3,7 +3,7 @@
 {block 'main'}
 {parent}
 
-<v-section>
+<section>
   {include 'catalog-elements'}
-</v-section>
+</section>
 {/block}

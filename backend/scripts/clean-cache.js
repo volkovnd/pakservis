@@ -1,12 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const backendPath = path.resolve("../backend");
-
-const cachePath = path.join(backendPath, "public/core/cache");
+const cachePath = path.resolve("../backend/public/core/cache");
 
 if (fs.existsSync(cachePath)) {
-  fs.rmSync(cachePath, {
-    recursive: true,
-  });
+  fs.rmSync(cachePath, { recursive: true });
 }

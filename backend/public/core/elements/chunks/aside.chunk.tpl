@@ -1,3 +1,3 @@
-<v-aside>
-    <h3>ASIDE!!!</h3>
-</v-aside>
+<v-container fluid>
+  <h3>ASIDE!!!</h3>
+</v-container>

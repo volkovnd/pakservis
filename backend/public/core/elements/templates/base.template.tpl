@@ -9,61 +9,59 @@
     <title>{$_modx->resource.pagetitle} - {$_modx->config.site_name}</title>
 
     {block 'styles'}
-      <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700:cyrillic,latin" rel="stylesheet"  />
+      <link href="//fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic:cyrillic,latin" rel="stylesheet" />
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic:cyrillic,latin" rel="stylesheet" />
     {/block}
   {/block}
   </head>
   <body>
-  {block 'body'}
     <div id="app">
-    {block 'header'}
-      {include 'header'}
-    {/block}
+      {block 'header'}
+        {include 'header'}
+      {/block}
 
-    {block 'menu'}
-      {include 'menu'}
-    {/block}
+      {block 'menu'}
+        {include 'menu'}
+      {/block}
 
-    <v-container>
-      <div class="row">
-        <div class="col col-md-8 col-lg-9">
-          <v-main>
-          {block 'main'}
-            <v-section>
-              {block 'heading'}
-                {block 'title'}
-                  <h1>{$_modx->resource.pagetitle}</h1>
+      <div>
+        <v-container>
+          <div class="row">
+            <div class="col-12 col-md-8 col-lg-9">
+              <div id="main">
+                {block 'main'}
+                <section>
+                  {block 'heading'}
+                    {block 'title'}
+                      <h1>{$_modx->resource.pagetitle}</h1>
+                    {/block}
+                    {block 'breadcrumb'}
+                      {include 'breadcrumb'}
+                    {/block}
+                  {/block}
+                  {block 'content'}
+                    {$_modx->resource.content}
+                  {/block}
+                </section>
                 {/block}
-                {block 'breadcrumb'}
-                  {include 'breadcrumb'}
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <aside>
+                {block 'aside'}
+                  {include 'aside'}
                 {/block}
-              {/block}
-
-              <v-content>
-              {block 'content'}
-                {$_modx->resource.content}
-              {/block}
-              </v-content>
-            </v-section>
-          {/block}
-          </v-main>
-        </div>
-        <div class="col col-md-4 col-lg-3">
-          {block 'aside'}
-            {include 'aside'}
-          {/block}
-        </div>
+              </aside>
+            </div>
+          </div>
+        </v-container>
       </div>
-    </v-container>
 
-    {block 'footer'}
-      <v-footer>
+      {block 'footer'}
         {include 'footer'}
-      </v-footer>
-    {/block}
+      {/block}
     </div>
 
     {block 'scripts'}{/block}
-  {/block}
   </body>
 </html>
